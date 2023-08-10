@@ -25,6 +25,9 @@ nc_all_data_file = 'GBR4_H2p0_B3p1_Cq3b_Dhnd_WQ_all_3.0m_Jan2011-Dec2018'
 nc_dry_data_file = 'GBR4_H2p0_B3p1_Cq3b_Dhnd_WQ_dry_3.0m_May2011-Oct2018'
 nc_wet_data_file = 'GBR4_H2p0_B3p1_Cq3b_Dhnd_WQ_wet_3.0m_Nov2012-Apr2019'
 
+# Attribution to put in the metadata of the plots
+attribution = 'Eric Lawrey (AIMS) 10 Aug 2023'
+
 # Define map extent
 extent = [142, 154.2, -26.7, -10.0]
 output_path = os.path.join("export","single-plots")
@@ -43,6 +46,7 @@ def plot_gbr_ereefs(plot_info):
     extent = plot_info['extent']
     output_path = plot_info['output_path']
     scale_type = plot_info['scale_type']
+    attribution = plot_info['attribution']
     
     # Load NetCDF data
     nc_data = xr.open_dataset(os.path.join('derived','eReefs-BGC',f'{nc_data_file}.nc'))
@@ -215,10 +219,10 @@ def plot_gbr_ereefs(plot_info):
 
     # ================== Metadata ===================
     divider = make_axes_locatable(ax)
-    ax_sub = divider.append_axes("bottom", size="3%", pad=0.05)  # adjust size and pad as needed
+    ax_sub = divider.append_axes("bottom", size="3%", pad=0.1)  # adjust size and pad as needed
 
     ax_sub.axis('off')
-    ax_sub.text(0.05, 0.5, f"Data: GBR4_H2p0_B3p1_Cq3b_Dhnd, Variable: {nc_var}, Aggregation: mean\nDepth: {str(-depth)} m, Time range: {time_range}", ha='left', va='center', fontsize=8)
+    ax_sub.text(0.04, 0.5, f"Data: GBR4_H2p0_B3p1_Cq3b_Dhnd, Variable: {nc_var}, Aggregation: mean\nDepth: {str(-depth)} m, Time range: {time_range}, Produced by: {attribution}", ha='left', va='center', fontsize=7, color='#555555')
 
     # Determine the aspect ratio
     aspect_ratio = fig.get_figwidth() / fig.get_figheight()
@@ -270,7 +274,8 @@ def make_wq_plots(season, time_range, nc_file):
             'extent' : extent,
             'output_path': output_path,
             'scale_type': 'log',
-            'skip': False
+            'skip': False,
+            'attribution': attribution
         },
         {
             'nc_data_file': nc_file,
@@ -285,7 +290,8 @@ def make_wq_plots(season, time_range, nc_file):
             'extent' : extent,
             'output_path': output_path,
             'scale_type': 'log',
-            'skip': False
+            'skip': False,
+            'attribution': attribution
         },
         {
             'nc_data_file': nc_file,
@@ -300,7 +306,8 @@ def make_wq_plots(season, time_range, nc_file):
             'extent' : extent,
             'output_path': output_path,
             'scale_type': 'linear',
-            'skip': False
+            'skip': False,
+            'attribution': attribution
         },
         {
             'nc_data_file': nc_file,
@@ -315,7 +322,8 @@ def make_wq_plots(season, time_range, nc_file):
             'extent' : extent,
             'output_path': output_path,
             'scale_type': 'linear',
-            'skip': False
+            'skip': False,
+            'attribution': attribution
         },
         {
             'nc_data_file': nc_file,
@@ -330,7 +338,8 @@ def make_wq_plots(season, time_range, nc_file):
             'extent' : extent,
             'output_path': output_path,
             'scale_type': 'log',
-            'skip': False
+            'skip': False,
+            'attribution': attribution
         },
         {
             'nc_data_file': nc_file,
@@ -345,7 +354,8 @@ def make_wq_plots(season, time_range, nc_file):
             'extent' : extent,
             'output_path': output_path,
             'scale_type': 'log',
-            'skip': False
+            'skip': False,
+            'attribution': attribution
         },
         {
             'nc_data_file': nc_file,
@@ -361,7 +371,8 @@ def make_wq_plots(season, time_range, nc_file):
             'output_path': output_path,
             'scale_type': 'log',
             'scale_type': 'log',
-            'skip': False
+            'skip': False,
+            'attribution': attribution
         },
         {
             'nc_data_file': nc_file,
@@ -376,7 +387,8 @@ def make_wq_plots(season, time_range, nc_file):
             'extent' : extent,
             'output_path': output_path,
             'scale_type': 'linear',
-            'skip': False
+            'skip': False,
+            'attribution': attribution
         },
         {
             'nc_data_file': nc_file,
@@ -391,7 +403,8 @@ def make_wq_plots(season, time_range, nc_file):
             'extent' : extent,
             'output_path': output_path,
             'scale_type': 'linear',
-            'skip': False
+            'skip': False,
+            'attribution': attribution
         }
     ]
     return plots_info

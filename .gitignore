@@ -1,0 +1,9 @@
+data/
+src-data/eReefs-BGC/
+src-data/GBR_AIMS_eReefs-basemap
+export/*
+!export/readme.md
+derived/
+gpt-data/
+
+

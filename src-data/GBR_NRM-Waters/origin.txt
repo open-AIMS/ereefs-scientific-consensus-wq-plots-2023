@@ -1,0 +1,1 @@
+This dataset doesn't have good provenance, but it the boundaries used for the eReefs Water Quality Index for the Reef Plan 2050 GBR report card.

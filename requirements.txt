@@ -1,0 +1,7 @@
+xarray
+geopandas
+matplotlib
+cartopy
+netCDF4
+rioxarray
+matplotlib_scalebar

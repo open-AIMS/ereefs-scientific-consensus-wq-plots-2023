@@ -12,6 +12,11 @@ The eReefs data used to generate these plots [GBR4_H2p0_B3p1_Cq3b_Dhnd baseline 
 
 This code is made available under an MIT license and the plots are make available under a Creative Commons Attribution 4.0 license, with attribution: Eric Lawrey, AIMS.
 
+# Citation
+To cite this repository in APA style:
+
+Lawrey, E., (2023). eReefs BGC Seasonal plots for Scientific Consensus 2023 \[Source code\]. Australian Institute of Marine Science, Townsville. https://github.com/open-AIMS/ereefs-scientific-consensus-wq-plots-2023
+
 # Setting up the environment
 The following are instructions for reproducing these plots.
 
